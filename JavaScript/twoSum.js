@@ -10,8 +10,10 @@ Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 */
 
 const twoSum = (nums, target) => {
-  for (let i = 0; i < nums.length; i++) {
-    let complement = target - nums[i];
+    for (let i = 0; i < nums.length; i++) {
+      // Iterate through numbers
+        let complement = target - nums[i];
+        // Find complement, see if nums includes it
     if (nums.includes(complement) && nums.indexOf(complement) !== i) {
       return [nums.indexOf(complement), i];
     }
