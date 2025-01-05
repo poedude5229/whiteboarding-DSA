@@ -7,6 +7,14 @@ class EvilDragon extends Dragon {
     this.evilDoings = evilDoings;
     this.nemesis = nemesis;
   }
+
+  dontInviteThemOverForDinner() {
+    this.evilDoings.forEach((evilDoin) =>
+      console.log(`${this.name} will ${evilDoin}`)
+    );
+  }
+
+    
 }
 
 module.exports = EvilDragon;
