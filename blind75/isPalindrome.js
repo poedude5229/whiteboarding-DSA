@@ -1,7 +1,7 @@
 const isPalindrome = (s) => {
   let betterS = "";
   for (let i = 0; i < s.length; i++) {
-    if ("ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(s[i].toUpperCase())) {
+    if ("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".includes(s[i].toUpperCase())) {
       betterS += s[i].toUpperCase();
     }
   }
@@ -25,3 +25,4 @@ const isPalindrome = (s) => {
 
 console.log(isPalindrome("raceca r?"));
 console.log(isPalindrome("farts?"));
+console.log(isPalindrome("0P"));
