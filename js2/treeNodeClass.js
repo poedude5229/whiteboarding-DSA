@@ -1,4 +1,4 @@
-export default class TreeNode {
+class TreeNode {
   constructor(value) {
     this.value = value;
     this.children = [];
@@ -8,3 +8,5 @@ export default class TreeNode {
     this.children.push(child);
   }
 }
+
+module.exports = TreeNode;

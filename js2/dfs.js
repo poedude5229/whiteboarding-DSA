@@ -1,4 +1,4 @@
-import TreeNode from "./treeNodeClass";
+const TreeNode = require("./treeNodeClass");
 
 const A = new TreeNode("A");
 const B = new TreeNode("B");
@@ -23,4 +23,19 @@ Tree Structure:
 
 */
 
+const dfs = (node) => {
+  const stack = [node];
+  const visited = new Set();
+  while (stack.length > 0) {
+    let currentNode = stack.pop();
+    if (visited.has(currentNode)) continue;
+    visited.add(currentNode.value);
+    console.log(currentNode.value);
 
+    for (let child of currentNode.children) {
+      if (!visited.has(child)) stack.push(child);
+    }
+  }
+};
+
+dfs(A);
