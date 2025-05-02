@@ -43,4 +43,20 @@ Approach: Sliding Window:
 5. Return maxProfitSoFar
 */
 
-
+function maxProfit(prices) {
+  let left = 0;
+  let right = 1;
+  let maxProfitSoFar = 0;
+  while (right < prices.length) {
+    let buyPrice = prices[left];
+    let sellPrice = prices[right];
+    if (sellPrice <= buyPrice) {
+      left = right;
+    } else {
+      let profit = sellPrice - buyPrice;
+      maxProfitSoFar = Math.max(maxProfitSoFar, profit);
+    }
+    right++;
+  }
+  return maxProfitSoFar;
+}
