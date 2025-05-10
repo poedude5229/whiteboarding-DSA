@@ -29,3 +29,23 @@ console.log(get3Combinations([1, 2, 3]));
 
 console.log(get3Combinations(["a", "b", "c", "d"]));
 // ➞ [['a', 'b'], ['a', 'c'], ['a', 'd'], ['b', 'c'], ['b', 'd'], ['c', 'd']]
+
+function getCombinationsMult(arr, size) {
+  const result = [];
+
+  const helper = (start, combo) => {
+    if (combo.length === size) {
+      result.push([...combo]);
+      return;
+    }
+
+    for (let i = start; i < arr.length; i++) {
+      combo.push(arr[i]);
+      helper(i + 1, combo);
+      combo.pop();
+    }
+  };
+
+  helper(0, []);
+  return result;
+}
