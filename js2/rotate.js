@@ -30,12 +30,15 @@ const otherRotate = (arr, n) => {
 // console.log(otherRotate([1, 2, 3, 4, 5], 2));
 
 const rThree = (arr, n) => {
+  //   let newArr = [...arr];
+  //   let newStart = newArr.splice(n + 1);
+  //   newArr.unshift(...newStart);
+  //   //   let fixed = [...newArr];
+  // //   console.log(newArr);
+  //   return newArr;
   let newArr = [...arr];
-  let newStart = newArr.splice(n + 1);
-  newArr.unshift(...newStart);
-  //   let fixed = [...newArr];
-//   console.log(newArr);
-  return newArr;
+  let moved = newArr.splice(n + 1);
+  return [...moved, ...newArr];
 };
 
 console.log(rThree([1, 2, 3, 4, 5], 2));
