@@ -18,3 +18,13 @@ const rotate = (arr, n) => {
 
   return arr.slice(-normalizedN).concat(arr.slice(0, len - norm));
 };
+
+const otherRotate = (arr, n) => {
+  let len = arr.length;
+  let norm = n % len;
+  let removed = arr.splice(len - norm, norm);
+  arr.unshift(...removed);
+  return arr;
+};
+
+console.log(otherRotate([1, 2, 3, 4, 5], 2));
